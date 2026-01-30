@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoMaster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Background Elements -->
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+
+        <header>
+            <div class="header-top">
+                <h1>ChronoMaster</h1>
+                <button id="view-scoreboard-btn" class="icon-btn" aria-label="View Leaderboard" title="Leaderboard">
+                    <img src="leaderboard-star-svgrepo-com.svg" width="24" height="24" alt="Leaderboard">
+                </button>
+            </div>
+            <p class="subtitle">Master the art of time</p>
+        </header>
+
+        <main>
+            <section id="game-area" class="glass-panel">
+                <!-- Start Overlay -->
+                <div id="start-overlay" class="start-overlay">
+                    <button id="start-game-btn" class="start-btn">Start</button>
+                </div>
+
+                <div id="countdown-overlay" class="countdown-overlay hidden">
+                    <div class="countdown-number">3</div>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-label">Progress</span>
+                        <span class="stat-value" id="progress">0 / 10</span>
+                    </div>
+                </div>
+
+                <div class="clock-container">
+                    <div class="clock">
+                        <div class="clock-face">
+                            <!-- Clock markings -->
+                            <div class="number n1">1</div>
+                            <div class="number n2">2</div>
+                            <div class="number n3">3</div>
+                            <div class="number n4">4</div>
+                            <div class="number n5">5</div>
+                            <div class="number n6">6</div>
+                            <div class="number n7">7</div>
+                            <div class="number n8">8</div>
+                            <div class="number n9">9</div>
+                            <div class="number n10">10</div>
+                            <div class="number n11">11</div>
+                            <div class="number n12">12</div>
+                        </div>
+                        <div class="hand hour-hand" id="hour-hand"></div>
+                        <div class="hand minute-hand" id="minute-hand"></div>
+                        <div class="center-dot"></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="input-group">
+                        <label for="time-input" class="sr-only">Enter time</label>
+                        <input type="text" id="time-input" placeholder="HH:MM" autocomplete="off">
+                        <button id="submit-btn" class="btn-primary">Submit</button>
+                    </div>
+                    <div id="feedback" class="feedback-msg"></div>
+                </div>
+            </section>
+
+            <!-- Game Over / Scoreboard Modal -->
+            <div id="modal" class="modal hidden">
+                <div class="modal-content glass-panel compact-modal">
+                    <button id="close-modal-btn" class="close-btn">&times;</button>
+
+                    <div id="modal-game-over" class="modal-section hidden">
+                        <h2>Time's Up!</h2>
+                        <p class="final-time">You finished in <span id="final-time-display">00:00</span></p>
+                    </div>
+
+                    <div id="modal-scoreboard" class="modal-section">
+                        <h3>Leaderboard</h3>
+                        <ul id="score-list">
+                            <!-- Scores go here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
